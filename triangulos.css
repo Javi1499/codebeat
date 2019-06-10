@@ -1,0 +1,21 @@
+form{
+    background-color: black;
+ font-size: 30px;
+ width: 40%;
+ border-radius: 10px;
+ 
+}
+
+label {
+    color: white;
+    font-family: 'Chakra Petch', sans-serif;
+}
+
+input {
+    color: black;
+    border-radius: 6px;
+}
+
+h1{
+    font-family: 'Chakra Petch', sans-serif;
+}
