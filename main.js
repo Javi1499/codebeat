@@ -16,7 +16,7 @@ class Main {
 
       this.alumno.forEach( (e, index) => {
           if (e.cuenta == numCuenta) {
-              alumnos.asistencias++;
+              
       
               localStorage.setItem("alumnos", JSON.stringify(this.alumno));
               this._tabla.rows[index+1].cells[0].innerHTML = alumnos.cuenta;
