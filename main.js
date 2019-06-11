@@ -9,25 +9,6 @@ class Main {
 
     
 
-    document.querySelector("#btnAdd").addEventListener("click", () => {
-      let form = document.querySelector("#form");
-
-      if (form.checkValidity() === true) {
-        let name = document.querySelector("#name").value;
-        let cuenta = document.querySelector("#cuenta").value;
-
-        let objAlumnos = {
-          name: name,
-          cuenta: cuenta
-        };
-
-        let alumnos = new Alumnos(objAlumnos);
-
-        agenda.addAlumnos(alumnos);
-      }
-
-      form.classList.add("was-validated");
-    });
 
 
     document.querySelector("#btnAdd2").addEventListener("click", () => {
