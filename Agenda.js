@@ -1,5 +1,4 @@
 import Alumnos from "./Alumnos.js";
-this.asistencia = 0;
 
 export default class Agenda {
   constructor(tableAgenda) {
@@ -15,8 +14,9 @@ export default class Agenda {
     if (lsAlumnos === null) {
       return;
     }
-    lsAlumnos.forEach( (e, index) => {
+    lsAlumnos.forEach((e, index) => {
       this._addToTable(new Alumnos(e));
+      console.log(index);
     });
   }
 
@@ -30,12 +30,12 @@ export default class Agenda {
     cellName.innerHTML = alumnos.name;
     cellCuenta.innerHTML = alumnos.cuenta;
     cellAsistencia.innerHTML = this.asistencia;
-    
+
 
     let objAlumnos = {
       name: alumnos.name,
       cuenta: alumnos.cuenta,
-      
+
     };
 
     this.alumno.push(objAlumnos);
@@ -45,9 +45,8 @@ export default class Agenda {
     let foundAt = -1;
 
     this.alumno.forEach((e, index) => {
-      if(e.cuenta === cuenta){
-      foundAt = index;
-      return;
+      if (e.cuenta === cuenta) {
+        foundAt = index;
       }
     });
     return foundAt;
@@ -55,7 +54,7 @@ export default class Agenda {
 
   addAlumnos(alumnos) {
     let found = this._findAlumnos(alumnos.cuenta);
-    console.log(found);
+
 
     if (found >= 0) {
       Swal.fire({
@@ -84,4 +83,5 @@ export default class Agenda {
     this._addToTable(alumnos);
     localStorage.setItem("alumnos", JSON.stringify(this.alumno));
   }
+
 }

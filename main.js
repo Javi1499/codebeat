@@ -7,43 +7,42 @@ class Main {
       document.querySelector("#agenda")
     );
 
-    
+
 
 
 
     document.querySelector("#btnAdd2").addEventListener("click", () => {
       let numCuenta = document.querySelector("#cuenta").value;
 
-      this.alumno.forEach( (e, index) => {
-          if (e.cuenta == numCuenta) {
-              
-      
-              localStorage.setItem("alumnos", JSON.stringify(this.alumno));
-              this._tabla.rows[index+1].cells[0].innerHTML = alumnos.cuenta;
-              this._tabla.rows[index+1].cells[1].innerHTML = alumnos.nombre;
-              this._tabla.rows[index+1].cells[2].innerHTML = alumnos.asistencias;
-          }else{
-              alert("El numero de cuenta no esta registrado");
-          }
+      this.alumno.forEach((e, index) => {
+        if (e.cuenta === numCuenta) {
+
+
+          localStorage.setItem("alumnos", JSON.stringify(this.alumno));
+
+
+        } else {
+          alert("El numero de cuenta no esta registrado");
+        }
       });
-  });
-  let form = document.querySelector("#form");
+    });
+    let form = document.querySelector("#form");
 
-  if (form.checkValidity() === true) {
-    let name = document.querySelector("#name").value;
-    let cuenta = document.querySelector("#cuenta").value;
+    if (form.checkValidity() === true) {
+      let name = document.querySelector("#name").value;
+      let cuenta = document.querySelector("#cuenta").value;
 
-    let objAlumnos = {
-      name: name,
-      cuenta: cuenta
-    };
+      let objAlumnos = {
+        name: name,
+        cuenta: cuenta
+      };
 
-    let alumnos = new Alumnos(objAlumnos);
+      let alumnos = new Alumnos(objAlumnos);
 
-    agenda.addAlumnos(alumnos);
-  }
+      agenda.addAlumnos(alumnos);
+    }
 
-  form.classList.add("was-validated");
+    form.classList.add("was-validated");
 
   }
 }
