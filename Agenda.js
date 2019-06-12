@@ -68,20 +68,6 @@ export default class Agenda {
     this._addToTable(alumnos);
     localStorage.setItem("alumnos", JSON.stringify(this.alumno));
   }
-  addAsistencia(alumnos) {
-    let found = this._findAlumnos(alumnos.cuenta);
-
-    if (found >= 0) {
-      Swal.fire({
-        type: "error",
-        title: "Error",
-        text: "el usario ya esta registrado"
-      });
-      return;
-    }
-
-    this._addToTable(alumnos);
-    localStorage.setItem("alumnos", JSON.stringify(this.alumno));
-  }
+  
 
 }
